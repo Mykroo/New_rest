@@ -1,0 +1,29 @@
+body  {
+    background-image: url("imgs/regalos2.jpg");    
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center; 
+}
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;      
+      margin: auto;	
+  }
+
+section{
+	height: 100%;
+	width: 100%;
+	background-image: url('regalos.jpg') ;
+}
+#inicio>center{
+	margin-top: 22%;
+}
+
+section:nth-child(2n-1){
+	background-color: none;
+}
+
+section:hover{
+	background-color: none;
+	
+}
