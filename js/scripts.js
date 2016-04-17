@@ -3,9 +3,9 @@ $(document).ready(function() {
 	refTam();	
 });
 
-var refTam= function(){
+var refTam= setInterval(function(){
 	var alto= $(window).height();
 	var ancho= $(window).width();
-	$('#todo').height(alto);
-	$('#todo').width(ancho);
-}
+	$('#cuerpo').height(alto);
+	$('#cuerpo').width(ancho);
+}, 20);

@@ -1,0 +1,91 @@
+
+#cuerpo{
+  background: url(../imgs/rst.jpg) center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: fixed;
+}
+#regresar {
+  border-radius: 50%;
+  height: 50px;
+}
+
+h1{
+  font-family: fantasy;
+  font-size: 50px;
+  color: darkred;
+}
+#menu{
+  height: 75%;  
+}
+.fade{
+  height: 100%;
+  
+}
+div .promo {
+  background-color: yellow;    
+  margin-top: 2%;
+  margin-left: 7%;
+  border-radius: 10%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+
+
+div{
+  height:60%;  
+}
+div #menu_arriba .promo:nth-child(1){
+  background-image: url(../imgs/lunes.jpg);
+}
+div #menu_arriba .promo:nth-child(2){
+  background-image: url(../imgs/martes.jpg);
+}
+div #menu_arriba .promo:nth-child(3){
+  background-image: url(../imgs/miercoles.jpg);
+}
+div #menu_arriba .promo:nth-child(4){
+  background-image: url(../imgs/jueves.jpg);
+}
+div #menu_abajo .promo:nth-child(1){
+  background-image: url(../imgs/viernes.jpg);
+}
+div #menu_abajo .promo:nth-child(2){
+  background-image: url(../imgs/sabado.jpg);
+}
+div #menu_abajo .promo:nth-child(3){
+  background-image: url(../imgs/domingo.jpg);
+}
+div #menu_abajo .promo:nth-child(4){
+  background-image: url(../imgs/mes.jpg);
+}
+
+
+div .promo:nth-child(odd){
+  animation:anima 2s linear infinite alternate;
+  -webkit-animation:anima 2s linear infinite alternate;
+}
+div .promo:nth-child(even){
+  animation:anima2 2s linear infinite alternate;
+  -webkit-animation:anima2 2s linear infinite alternate;
+}
+
+@-webkit-keyframes anima{
+  from{ -webkit-transform:rotate(-5deg);}
+  to{ -webkit-transform:rotate(5deg);}
+}
+@keyframes anima{
+  from{ transform:rotate(-5deg);}
+  to{ transform:rotate(5deg);}
+}
+
+@-webkit-keyframes anima2{
+  from{ -webkit-transform:rotate(5deg);}
+  to{ -webkit-transform:rotate(-5deg);}
+}
+@keyframes anima2{
+  from{ transform:rotate(5deg);}
+  to{ transform:rotate(-5deg);}
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="restComandas">
+<head>
+	<meta charset="UTF-8">
+	<title>Comandas</title>
+	<script src="js/angular.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">	
+	<link rel="stylesheet" href="css/comandas.css">
+</head>
+<body>
+	<center>
+		<h1>Realiza la orden: {{mesero}}</h1>
+	</center>
+
+	<div class="container-fluid">
+		<div id="comandas" ng-controller="ComandasController as comandasCtrl">
+			<div class="btn {{mesa.estado}}" ng-init="n=1"  ng-repeat="mesa in comandasCtrl.mesas">
+				<h3>{{n1}}</h3>
+				<img src="imgs/table.png" height="75px">
+			</div>
+		</div>
+	</div>	
+	<div>
+		<div class="container-fluid" id="menu_comanda">
+			
+		</div>
+	</div>
+	
+	<script src="js/jquery-2.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/comandas.js"></script>
+</body>
+</html>
