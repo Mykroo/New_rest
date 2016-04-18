@@ -7,22 +7,84 @@
 	<link rel="stylesheet" href="css/bootstrap.css">	
 	<link rel="stylesheet" href="css/comandas.css">
 </head>
-<body>
+<body ng-controller="ComandasController as comandasCtrl">
 	<center>
 		<h1>Realiza la orden: {{mesero}}</h1>
 	</center>
 
-	<div class="container-fluid">
-		<div id="comandas" ng-controller="ComandasController as comandasCtrl">
-			<div class="btn {{mesa.estado}}" ng-init="n=1"  ng-repeat="mesa in comandasCtrl.mesas">
-				<h3>{{n1}}</h3>
+	<div class="container-fluid" >
+		<div id="comandas">
+			<div onclick="mesaclk(this)" class="btn-mesa btn" ng-class="getClaseMesa($index)" ng-repeat="mesa in comandasCtrl.mesas" id="mesa{{mesa.id}}">
+				<h3>{{mesa.id}}</h3>
 				<img src="imgs/table.png" height="75px">
+				<h3>Sillas: {{mesa.numSillas}}</h3>
 			</div>
 		</div>
 	</div>	
 	<div>
 		<div class="container-fluid" id="menu_comanda">
-			
+			<br>
+			<br>
+			<br>
+			<div class="container" role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs nav-justified" role="tablist">
+					<li role="presentation" ng-repeat="cat in comandasCtrl.categos" ng-class="{true: 'active'}[cat.id == 1]">
+						<a href="#{{cat.nombre}}" aria-controls="{{cat.nombre}}" role="tab" data-toggle="tab">{{cat.nombre | capitalize}}</a>
+					</li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div ng-repeat="cat in comandasCtrl.categos" role="tabpanel" class="tab-pane " id="{{cat.nombre}}" ng-class="{true: 'active'}[cat.id == 1]">
+						<table class="table table-striped ">
+							<thead>
+								<tr>
+									<th>Producto</th>
+									<th>Precio</th>
+									<th>Descripcion</th>
+									<th>Cantidad</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="prod in comandasCtrl.prods" ng-init="cantidad=0" ng-if="cat.id==prod.idCategoria">
+									<td hidden>{{prod.id}}</td>
+									<td>{{prod.nombre}}</td>
+									<td >{{prod.precio | currency}}</td>
+									<td>{{prod.desc}}</td>
+									<td>
+										<div ng-click="cantidad=cantidad+1" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></div>
+										{{cantidad}}
+										<div ng-click="cantidad=cantidad-1" class="btn btn-primary"><span class="glyphicon glyphicon-minus"></span></div>
+									</td>
+								</tr>
+								<!-- <tr>
+									<td>Manzanita</td>
+									<td >{{18 | currency}}</td>
+									<td>Refresco de 600ml</td>
+								</tr>
+								<tr>
+									<td>Sprite</td>
+									<td >{{18 | currency}}</td>
+									<td>Refresco de 600ml</td>
+								</tr> -->
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab">
+						
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="btn btn-primary col-md-4">
+					<span class="glyphicon glyphicon-plus"></span><br>Ingresar comanda
+				</div>
+				<div id="cancel_comanda" class="btn btn-danger col-md-4">
+					<span class="glyphicon glyphicon-remove"></span><br> Cancelar comanda
+				</div>
+			</div>
 		</div>
 	</div>
 	

@@ -1,18 +1,30 @@
 body{
-	background-color: grey;
-	display: block;
-	position: absolute;
+	background-color: grey;	
+	background: url(../imgs/rst.jpg) no-repeat ;
+	-webkit-background-size:cover;
+	background-size: cover;
+
 }
 
 div .btn{
 	margin: 25px; 
 	border-radius: 25px;  
 }
+#comandas{
+}
 
 div #menu_comanda{	
-	position: fixed;
-	background-color: red;
+	display: none;
+	position: absolute;
+	top: -5px;	
+	background-color: grey;
 	width: 100%;
-	height: 1080px;	
+	height: 0px;	
+	opacity: 0;
+	overflow: auto;
+}
+
+.tab-content{
+	background-color: white;
 }
 

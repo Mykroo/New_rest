@@ -7,7 +7,7 @@ if ($conn->connect_error) {
 	die("Conexion fallida: " . $conn->connect_error);
 }
 	//echo "Bien conectao";
-$sql="SELECT * FROM newrest.MESA";
+$sql="SELECT * FROM newrest.categoria";
 $rs=$conn->query($sql);	
 $rows=array();
 if($rs->num_rows>0){
