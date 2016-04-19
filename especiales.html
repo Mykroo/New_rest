@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title> Comandas </title>
+
+
+	<!-- Bootstrap core CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/animate.css">
+
+	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+</head>
+
+<body>
+	<div id="fondo">
+		<div class="logo">
+			<a href="index.html"></a>
+			<!--  <h1>holii</h1> -->
+		</div>
+		<div id="menu-especiales" >
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Carousel indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol>   
+				<!-- Wrapper for carousel items -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="./images/reservacion.jpg" style{height:"400px"; width;"800px";} alt="">
+						<div class="carousel-caption">
+							<h2>Reservaciones</h2>
+							<a class="btn btn-default" role="button" data-toggle="modal" href='#modal-id'>Ver</a>
+						</div>
+
+					</div>
+					<div class="item">
+						<img src="./images/romantic.jpg" style{height:"400px"; width;"800px";} alt="">
+						<div class="carousel-caption">
+							<h2>Arreglos romanticos</h2>
+							<a class="btn btn-default" role="button" data-toggle="modal" href='#modal-id2'>Ver</a>
+						</div>
+					</div>
+					<div class="item">
+						<img src="./images/serv_domicilio.jpg" style{height:"400px"; width;"800px";} alt="">
+						<div class="carousel-caption">
+							<h2>Servicio a Domicilio</h2>
+							<a class="btn btn-default" role="button" data-toggle="modal" href='#modal-id3'>Ver</a>
+						</div>
+					</div>
+					<div class="item">
+						<img src="./images/business.jpg" style{height:"400px"; width;"800px";} alt="">
+						<div class="carousel-caption">
+							<h2>Business Cocktail</h2>
+							<a class="btn btn-default" role="button" data-toggle="modal" href='#modal-id4'>Ver</a>
+						</div>
+					</div>
+				</div>
+				<!-- Carousel controls -->
+				<a class="carousel-control left" href="#myCarousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="carousel-control right" href="#myCarousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+
+		</div>
+		<div class="back">
+			<button type="button" class="btn btn-default" id="back" onclick="window.location.href='index.html'"><h5 class="animated infinite bounce"><b>Regresar</b></h5></button>
+		</div>
+	</div>
+	
+
+
+</div><!-- /.container -->
+
+
+ <!-- ///////////// MODALES ///////////// -->
+<!-- Reservaciones -->
+<div class="modal fade" id="modal-id">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Reservaciones</h4>
+			</div>
+			<div class="modal-body">
+				<h1>Reservación Gratuita</h1>
+				<p>La reservación para cualquier día de la semana SIN COSTO</p>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Reservar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Romanticas -->
+
+<div class="modal fade" id="modal-id2">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Cenas y Arreglos Románticos</h4>
+			</div>
+			<div class="modal-body">
+				<h1>Arreglo de Mesa</h1>
+				<p>Incluye arreglo de rosas y Champagne.</p>
+				<p>El costo es de $250 pesos. Cargo adicional a tu consumo </p>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Solicitar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Domicilio -->
+
+<div class="modal fade" id="modal-id3">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Pedidos a Domicilio</h4>
+			</div>
+			<div class="modal-body">
+				<h1>Solicita Tu Pedido</h1>
+				<p>Realizar Pedido a domicilio Sin Costo Adicional</p>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Solicitar Pedido</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Business -->
+
+<div class="modal fade" id="modal-id4">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title"> Business Cocktail</h4>
+			</div>
+			<div class="modal-body">
+				<h1>Reservación Gratuita</h1>
+				<p>La reservacion para cualquier dia de la semana SIN COSTO</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Reservar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/funciones.js"></script>
+
+</body>
+</html>

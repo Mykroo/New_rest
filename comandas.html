@@ -8,9 +8,26 @@
 	<link rel="stylesheet" href="css/comandas.css">
 </head>
 <body ng-controller="ComandasController as comandasCtrl">
-	<center>
-		<h1>Realiza la orden: {{mesero}}</h1>
-	</center>
+	
+	
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<p class="navbar-text">Comanda a realizar por mesero: {{"Mykro"}}</p>
+
+			<ul class="nav navbar-nav">
+				<!-- <li class="active">
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Link</a>
+				</li> -->					
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				
+				<li><a href="index.html">Cerrar Sesión</a></li>
+			</ul>
+		</div>
+	</nav>
 	<div class="container-fluid" >
 		<div id="comandas">
 			<div onclick="mesaclk(this)" class="btn-mesa btn"  ng-class="{'btn-success': mesa.edo==0,'btn-danger': mesa.edo==1 , 'btn-warning': mesa.edo==2}" ng-repeat="mesa in comandasCtrl.mesas" id="mesa{{mesa.id}}">

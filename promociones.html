@@ -1,110 +1,88 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html  lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Promociones</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/promociones.css">	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title> Comandas </title>
+
+
+	<!-- Bootstrap core CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- <link rel="stylesheet" href="css/styles.css"> -->
+	<link rel="stylesheet" href="css/promociones.css">
+
+	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 </head>
+
 <body>
+	<!-- <div id="fondo"> -->
 
-<!-- <h1>Aspectos a evaluar</h1>
-<h1></h1>
-<li class="text-danger">Usabilidad: habilidad del software para satisfacer al usuario</li>
-<li>Funcionalidad:Habilidad de software para realizar el trabajo deseado (cumplimiento de requerimientos)</li>
-<li>Fiabilidad: Habilidad del software para mantenerse operativo (funcionando)</li>
-<li>Eficiencia: Habilidad del software para responder a una peticion de usuario con la velocidad apropiada</li>
-<li>Mantenibilidad: Habilidad del software para realizar cambios en el facilmente y con una adecuada proporción de cambio/costo</li>
-<li>Portabilidad: Habilidad del software para operar en diferenetes entornos informáticos(plataformas)</li> -->
+	<div id="cuerpo">	
+				<div class="logo" >
+			<a href="index.html" class="btn"></a>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div class="row" id="menu_arriba">
+				<div class="col-md-2 promo" data-toggle="modal" href='#promo_lunes'></div>
+				<div class="col-md-2 promo" ></div>
+				<div class="col-md-2 promo" ></div>
+				<div class="col-md-2 promo" ></div>
+			</div>
+			<div class="row" id="menu_abajo">
+				<div class="col-md-2 promo"></div>
+				<div class="col-md-2 promo"></div>
+				<div class="col-md-2 promo"></div>
+				<div class="col-md-2 promo"></div>
+			</div>
+			<!-- </div> -->
+	</div>
 
-<div id="cuerpo">		
-	<center>
-		<h1>Promociones</h1>
-		<button id="regresar" class="btn btn-default">Regresar<span class="glyphicon glyphicon-triangle-left"></span></button>
-	</center>
-	<div class="container-fluid" id="menu">
-		<div class="row" id="menu_arriba">
-			<div class="col-md-2 promo" data-toggle="modal" href='#promo_lunes'></div>
-			<div class="col-md-2 promo" ></div>
-			<div class="col-md-2 promo" ></div>
-			<div class="col-md-2 promo" ></div>
-		</div>
-		<div class="row" id="menu_abajo">
-			<div class="col-md-2 promo"></div>
-			<div class="col-md-2 promo"></div>
-			<div class="col-md-2 promo"></div>
-			<div class="col-md-2 promo"></div>
-		</div>
+	<div class="login">
+		<button type="button" class="btn btn-default" id="login" onclick="window.location.href='index.html'"><h5 class="animated infinite bounce"><b>regresar</b></h5></button>
 	</div>
-</div>
-<div class="modal fade" id="promo_lunes">
-	<div class="modal-dialog">
-		<div class="modal-content" id="c">		
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<center><h1>Todos los lunes 2x1 cualquier tipo de alitas</h1></center>
-			</div>
-			<div class="modal-footer">
-				<center>
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<button type="button" class="btn btn-primary">Reservar</button>
-				</center>
-			</div>
-		</div>
-	</div>
-</div>
 
-<div class="modal fade" id="promo_lunes">
-	<div class="modal-dialog">
-		<div class="modal-content" id="c">		
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<center><h1>Todos los lunes 2x1 cualquier tipo de alitas</h1></center>
-			</div>
-			<div class="modal-footer">
-				<center>
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<button type="button" class="btn btn-primary">Reservar</button>
-				</center>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="modal fade" id="promo_lunes">
-	<div class="modal-dialog">
-		<div class="modal-content" id="c">		
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<center><h1>Todos los lunes 2x1 cualquier tipo de alitas</h1></center>
-			</div>
-			<div class="modal-footer">
-				<center>
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<button type="button" class="btn btn-primary">Reservar</button>
-				</center>
+		<!-- </div> -->
+		<!-- /.container -->
+		<div class="modal fade" id="promo_lunes">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title"> Todos los lunes 2x1 cualquier tipo de alitas</h4>
+					</div>
+					<div class="modal-body">
+						<h2>Desea Ordenar la Promoción del día?</h2>
+						<!-- <h5><p>Promoción válida hasta las 9pm</p></h5> -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Solicitar Promoción</button>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
-<div class="modal fade" id="promo_lunes">
-	<div class="modal-dialog">
-		<div class="modal-content" >		
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<center><h1>Todos los lunes 2x1 cualquier tipo de alitas</h1></center>
-			</div>
-			<div class="modal-footer">
-				<center>
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<button type="button" class="btn btn-primary">Reservar</button>
-				</center>
-			</div>
-		</div>
-	</div>
-</div>
 
-<script src="js/jquery-2.2.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/promociones.js"></script>
+
+<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/promociones.js"></script>
+
+
 </body>
 </html>

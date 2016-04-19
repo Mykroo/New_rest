@@ -1,0 +1,173 @@
+/*<<<------------   Index css------------>>>>*/
+
+#fondo {
+    background-image: url(../images/copas.jpg);
+    background-repeat: no-repeat;
+    position:fixed;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+/*    background-color: gray;*/
+}
+
+#menu-inicio{
+	background-color: transparent;
+	width: 850px;
+	height: 400px;
+	margin: 15% 25%;
+	position: inherit;
+	opacity: .50;
+	/*border-radius: 3px;
+	box-shadow: 2px 2px 5px #888888;*/
+
+}
+
+#boton{
+	width: 280px;
+	height: 280px;
+	opacity: .89;
+	box-shadow: 2px 2px 5px #888888;
+	background-color: white;
+	text-align: center;
+	animation: animacion 3s linear infinite alternate;
+	-webkit-animation: animacion 3s linear infinite alternate;
+}
+
+#boton:active{
+	width: 280px;
+	height: 280px;
+	opacity: .89;
+	box-shadow: 2px 2px 5px #888888;
+	background-color: green;
+	text-align: center;
+	animation: animacion 3s linear infinite alternate;
+	-webkit-animation: animacion 3s linear infinite alternate;
+
+}
+
+
+@-webkit-keyframes animacion{
+  from{ -webkit-transform:skew(-5deg,-5deg);}
+  to{ -webkit-transform:skew(5deg,5deg);}
+}
+@keyframes animacion{
+  from{transform:skew(-5deg,-5deg);}
+  to{ transform:skew(5deg,5deg);}
+}
+
+#boton >h1{
+	color:darkred;
+	opacity: .99;
+}
+
+
+
+.col-md-6, .login{
+	-ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+}
+
+#login{
+	width: 300px;
+	height: 100px;
+	opacity: .40;
+	box-shadow: 2px 2px 5px #888888;
+	/*background-color: orange;*/
+	text-align: center;
+	margin: 35% 5px 10px 3px;
+	float:right;
+	background-color: white;
+	animation: anima 1.2s linear infinite alternate;
+	-webkit-animation: anima 1.2s linear infinite alternate;
+
+}
+
+
+@-webkit-keyframes anima{
+  from{ -webkit-transform:skew(-3deg,-3deg);}
+  to{ -webkit-transform:skew(3deg,3deg);}
+}
+@keyframes anima{
+  from{transform:skew(-3deg,-3deg);}
+  to{ transform:skew(3deg,3deg);}
+}
+
+#login >h1{
+	color:darkred;
+}
+
+.logo{
+	background-image: url("../images/logo.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 141px;
+	width: 252px;
+	margin: 20px 0px 0px 85%;
+	position: fixed;
+
+}
+ 
+
+/*<<<<<------  especiales css------->>>>*/
+
+#menu-especiales{
+
+	background-color: transparent;
+	width: 850px;
+	height: 500px;
+	margin: 10% 5% 5% 30%;
+	position: inherit;
+	/*opacity: .50;*/
+	/*border-radius: 3px;
+	box-shadow: 2px 2px 5px #888888;*/
+}
+
+.carousel{
+    background: transparent;
+    margin-top: 20px;
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+.item >img{
+	margin: 20px;
+	width: 650px;
+	height: 250px;
+}
+
+.col-md-6, .back{
+	-ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+}
+
+#back{
+	width: 250px;
+	height: 100px;
+	opacity: .60;
+	box-shadow: 2px 2px 5px #888888;
+	/*background-color: orange;*/
+	text-align: center;
+	margin: 35% 5px 10px 3px;
+	float:right;
+	background-color: white;
+	animation: anima 1.2s linear infinite alternate;
+	-webkit-animation: anima 1.2s linear infinite alternate;
+
+}
+
+
+
+@-webkit-keyframes anima{
+  from{ -webkit-transform:skew(-3deg,-3deg);}
+  to{ -webkit-transform:skew(3deg,3deg);}
+}
+@keyframes anima{
+  from{transform:skew(-3deg,-3deg);}
+  to{ transform:skew(3deg,3deg);}
+}
+
+#back >h5{
+	color:darkred;
+	font-size: 25pt;
+}

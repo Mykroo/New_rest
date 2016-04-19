@@ -11,7 +11,11 @@ div .btn{
 	border-radius: 25px;  
 }
 
+div #comandas{
 
+	position: absolute;
+	top: 45px;	
+}
 
 div #menu_comanda{	
 	display: none;

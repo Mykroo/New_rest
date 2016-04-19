@@ -1,6 +1,6 @@
 
 #cuerpo{
-  background: url(../imgs/rst.jpg) center no-repeat;
+  background: url(../images/copas.jpg) center no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   position: fixed;
@@ -10,22 +10,26 @@
   height: 50px;
 }
 
-h1{
+/*h1{
   font-family: fantasy;
   font-size: 50px;
   color: darkred;
-}
+}*/
 #menu{
   height: 75%;  
 }
 .fade{
-  height: 100%;
-  
+  height: 100%;  
 }
+
+.modal-footer{
+  height: 100px;
+}
+
 div .promo {
   background-color: yellow;    
-  margin-top: 2%;
-  margin-left: 7%;
+  margin-top: 1%;
+  margin-left: 2%;
   border-radius: 10%;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -35,31 +39,31 @@ div .promo {
 
 
 div{
-  height:60%;  
+  height:50%;  
 }
 div #menu_arriba .promo:nth-child(1){
-  background-image: url(../imgs/lunes.jpg);
+  background-image: url(../images/lunes.jpg);
 }
 div #menu_arriba .promo:nth-child(2){
-  background-image: url(../imgs/martes.jpg);
+  background-image: url(../images/martes.jpg);
 }
 div #menu_arriba .promo:nth-child(3){
-  background-image: url(../imgs/miercoles.jpg);
+  background-image: url(../images/miercoles.jpg);
 }
 div #menu_arriba .promo:nth-child(4){
-  background-image: url(../imgs/jueves.jpg);
+  background-image: url(../images/jueves.jpg);
 }
 div #menu_abajo .promo:nth-child(1){
-  background-image: url(../imgs/viernes.jpg);
+  background-image: url(../images/viernes.jpg);
 }
 div #menu_abajo .promo:nth-child(2){
-  background-image: url(../imgs/sabado.jpg);
+  background-image: url(../images/sabado.jpg);
 }
 div #menu_abajo .promo:nth-child(3){
-  background-image: url(../imgs/domingo.jpg);
+  background-image: url(../images/domingo.jpg);
 }
 div #menu_abajo .promo:nth-child(4){
-  background-image: url(../imgs/mes.jpg);
+  background-image: url(../images/mes.jpg);
 }
 
 
@@ -88,4 +92,47 @@ div .promo:nth-child(even){
 @keyframes anima2{
   from{ transform:rotate(5deg);}
   to{ transform:rotate(-5deg);}
+}
+
+.logo{
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 141px;
+  width: 252px;
+  margin: 20px 0px 0px 85%;
+  position: inherit;
+  float: right;
+
+}
+
+
+#login{
+  width: 250px;
+  height: 100px;
+  opacity: .60;
+  box-shadow: 2px 2px 5px #888888;
+  /*background-color: orange;*/
+  text-align: center;
+  margin: 35% 40px 10px 3px;
+  float:right;
+  background-color: white;
+  animation: anima 1.2s linear infinite alternate;
+  -webkit-animation: anima 1.2s linear infinite alternate;
+
+}
+
+
+@-webkit-keyframes anima{
+  from{ -webkit-transform:skew(-3deg,-3deg);}
+  to{ -webkit-transform:skew(3deg,3deg);}
+}
+@keyframes anima{
+  from{transform:skew(-3deg,-3deg);}
+  to{ transform:skew(3deg,3deg);}
+}
+
+#login >h5{
+  color:darkred;
+  font-size: 25pt;
 }
