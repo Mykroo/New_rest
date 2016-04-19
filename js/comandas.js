@@ -18,10 +18,12 @@ function cargaCatego(){
  $.ajax({
   url:'catego.php',
   dataType:"json",
+  contentType:'application/json; charset=UTF-8',
   async: false,
     //cache: false,
     success: function(data) {
       resp= data;
+      //console.log(data);
     }    
   });
  console.log("fin cargaCatego");
@@ -35,8 +37,7 @@ function cargaProds(){
     async: false,
     cache: false,
     success: function(data) {
-      resp= data;
-      console.log("oli");
+      resp= data;      
     },always:function(){
 
     }
@@ -44,6 +45,7 @@ function cargaProds(){
   console.log("fin cargaProds");
   return resp; 
 }
+///////***************------------------------------- DATOS DE JSON FIIN---------------------------***********************************/////////////////////
 
 
 var app = angular.module('restComandas', []).
@@ -58,24 +60,58 @@ app.controller('ComandasController', function() {
   this.prods=cargaProds();
   this.mesas = checaMesas();
   this.categos=cargaCatego();
-  
-  this.getClaseMesa=function(in){
-    
+  this.resetCantidad=function(){
+    for (var i = 0; i < this.prods.length; i++) {
+      this.prods[i].cantidad=0;
+    }
+    console.log("Reseteando cantidad"+this.prods[0].cantidad);
+  };
+  this.resetCantidad();
+  this.mandaComanda=function(){
+    var comanda=[];
+    for (var i = 0; i < this.prods.length; i++) {
+      if(this.prods[i].cantidad>0){
+        comanda[comanda.length]=this.prods[i];
+      }
+    };
+    this.resetCantidad();
+    //console.log("Comanda enviada: ");
+    //console.log(comanda);
+
   }
+  //console.log(this.categos);
+  
+//   this.cargaComanda=function() {
+//   // body...
+//   //console.log("oliiiiiiii");
+//   var tam=$('table').find('span').eq().length;
+
+//   $('table').find('span').eq(1).html();
+// };
 });
 
 function mesaclk(mes){
   //console.log("click en mesa ");
   //console.log(mes.id);
-  $('#menu_comanda').css('display', 'inherit');
+  $('#menu_comanda').css({display: 'inherit',
+    width: '100%',
+    height: '0px'
+  });
   $('#menu_comanda').animate({height: "1080px", width: "1920px",opacity: "0.99"}, 500);
 }
-$('#cancel_comanda').click(function(event) {
+$('#ingresa_comanda').click(function(event) {
  $('#menu_comanda').css({
    display: 'none',
    height: '0px',
-   opacity: '0'
- });;
+   opacity: '0',
+ });
+});
+
+
+$('#cancel_comanda').click(function(event) {
+  $('#menu_comanda').animate({
+   width: "0px",
+   opacity: "0.0"}, 1000); 
 });
 
 //JSON datos ejemplo ************-Ignoralooooo*************

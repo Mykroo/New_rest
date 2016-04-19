@@ -10,20 +10,26 @@ div .btn{
 	margin: 25px; 
 	border-radius: 25px;  
 }
-#comandas{
-}
+
+
 
 div #menu_comanda{	
 	display: none;
 	position: absolute;
 	top: -5px;	
-	background-color: grey;
+	background-color: lightgrey;
 	width: 100%;
 	height: 0px;	
 	opacity: 0;
 	overflow: auto;
 }
+#ingresa_comanda{
+	margin-left: 4%;
+}
 
+#cancel_comanda{
+	margin-left: 22%;
+}
 .tab-content{
 	background-color: white;
 }

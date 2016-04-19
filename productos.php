@@ -1,5 +1,5 @@
 <?php 
-//header('Content-type:application/json');
+header('Content-type:application/json');
 
 $conn = new mysqli("localhost","root","");
 
@@ -26,6 +26,7 @@ while($rs = $result->fetch_array()) {
     $outp .= '"nombre":"'   . $rs["nombre"] . '",';
     $outp .= '"precio":"'   . $rs["precio"] . '",';
     $outp .= '"idCategoria":"'   . $rs["idCategoria"] . '",';
+    $outp .= '"cantidad":"'   . 0 . '",';
     $outp .= '"desc":"'. $rs["desc"]     . '"}'; 
 }
 $outp .="]";

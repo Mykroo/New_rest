@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="restComandas">
+<html lang="es" ng-app="restComandas">
 <head>
 	<meta charset="UTF-8">
 	<title>Comandas</title>
@@ -11,10 +11,9 @@
 	<center>
 		<h1>Realiza la orden: {{mesero}}</h1>
 	</center>
-
 	<div class="container-fluid" >
 		<div id="comandas">
-			<div onclick="mesaclk(this)" class="btn-mesa btn" ng-class="getClaseMesa($index)" ng-repeat="mesa in comandasCtrl.mesas" id="mesa{{mesa.id}}">
+			<div onclick="mesaclk(this)" class="btn-mesa btn"  ng-class="{'btn-success': mesa.edo==0,'btn-danger': mesa.edo==1 , 'btn-warning': mesa.edo==2}" ng-repeat="mesa in comandasCtrl.mesas" id="mesa{{mesa.id}}">
 				<h3>{{mesa.id}}</h3>
 				<img src="imgs/table.png" height="75px">
 				<h3>Sillas: {{mesa.numSillas}}</h3>
@@ -32,9 +31,7 @@
 					<li role="presentation" ng-repeat="cat in comandasCtrl.categos" ng-class="{true: 'active'}[cat.id == 1]">
 						<a href="#{{cat.nombre}}" aria-controls="{{cat.nombre}}" role="tab" data-toggle="tab">{{cat.nombre | capitalize}}</a>
 					</li>
-
 				</ul>
-
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div ng-repeat="cat in comandasCtrl.categos" role="tabpanel" class="tab-pane " id="{{cat.nombre}}" ng-class="{true: 'active'}[cat.id == 1]">
@@ -48,27 +45,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr ng-repeat="prod in comandasCtrl.prods" ng-init="cantidad=0" ng-if="cat.id==prod.idCategoria">
+								<tr ng-repeat="prod in comandasCtrl.prods"  ng-if="cat.id==prod.idCategoria">
 									<td hidden>{{prod.id}}</td>
 									<td>{{prod.nombre}}</td>
 									<td >{{prod.precio | currency}}</td>
 									<td>{{prod.desc}}</td>
 									<td>
-										<div ng-click="cantidad=cantidad+1" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></div>
-										{{cantidad}}
-										<div ng-click="cantidad=cantidad-1" class="btn btn-primary"><span class="glyphicon glyphicon-minus"></span></div>
+										<div ng-click="prod.cantidad=prod.cantidad+1" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></div>
+										{{prod.cantidad}}
+										<div ng-click="prod.cantidad=prod.cantidad-1" class="btn btn-primary"><span class="glyphicon glyphicon-minus"></span></div>
 									</td>
-								</tr>
-								<!-- <tr>
-									<td>Manzanita</td>
-									<td >{{18 | currency}}</td>
-									<td>Refresco de 600ml</td>
-								</tr>
-								<tr>
-									<td>Sprite</td>
-									<td >{{18 | currency}}</td>
-									<td>Refresco de 600ml</td>
-								</tr> -->
+								</tr>						
 							</tbody>
 						</table>
 					</div>
@@ -77,17 +64,16 @@
 					</div>
 				</div>
 			</div>
-			<div>
-				<div class="btn btn-primary col-md-4">
+			<div id="btns_comanda" class="container" >
+				<div id="ingresa_comanda" ng-click="comandasCtrl.mandaComanda()" class="btn btn-primary col-md-4">
 					<span class="glyphicon glyphicon-plus"></span><br>Ingresar comanda
 				</div>
-				<div id="cancel_comanda" class="btn btn-danger col-md-4">
+				<div ng-click="comandasCtrl.resetCantidad()" id="cancel_comanda" class="btn btn-danger col-md-4">
 					<span class="glyphicon glyphicon-remove"></span><br> Cancelar comanda
 				</div>
 			</div>
 		</div>
-	</div>
-	
+	</div>	
 	<script src="js/jquery-2.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/comandas.js"></script>
