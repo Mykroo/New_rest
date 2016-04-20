@@ -75,13 +75,22 @@ app.controller('ComandasController', function(){
       }
     }
   };
-  this.mesaClk=mesaclk;    
+  this.mesaClk=mesaclk;   
+  this.mesaClk=function(n_mesa){
+    $('#menu_comanda').css({display: 'inherit',
+          width: '100%' 
+    });
+    $('#menu_comanda').animate({height: "1080px", width: "1920px",opacity: "0.99"}, 500);
+    this.n_mesa=n_mesa-1;
+    //console.log(this.n_mesa);
+  } 
   this.ingresaComanda=function(){    
     $('#menu_comanda').animate({
       width: "0px",
-      opacity: "0.0"}, 1000); 
+      opacity: "0.0"}, 1000);
+      this.mesas[this.n_mesa].edo=2; 
   };
-  
+
   this.cancelComanda=function(){    
     $('#menu_comanda').animate({
      width: "0px",
@@ -89,7 +98,7 @@ app.controller('ComandasController', function(){
   };
     //console.log("Comanda enviada: ");
     //console.log(comanda);
-    
+
   //console.log(this.categos);
   
 //   this.cargaComanda=function() {
