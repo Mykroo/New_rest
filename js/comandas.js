@@ -55,7 +55,7 @@ filter('capitalize', function() {
     return (!!input) ? input.replace(reg, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
   }
 });;
-app.controller('ComandasController', function() { 
+app.controller('ComandasController', function(){ 
   //console.log(mesa_ajax);
   this.prods=cargaProds();
   this.mesas = checaMesas();
@@ -73,12 +73,23 @@ app.controller('ComandasController', function() {
       if(this.prods[i].cantidad>0){
         comanda[comanda.length]=this.prods[i];
       }
-    };
-    this.resetCantidad();
+    }
+  };
+  this.mesaClk=mesaclk;    
+  this.ingresaComanda=function(){    
+    $('#menu_comanda').animate({
+      width: "0px",
+      opacity: "0.0"}, 1000); 
+  };
+  
+  this.cancelComanda=function(){    
+    $('#menu_comanda').animate({
+     width: "0px",
+     opacity: "0.0"}, 500); 
+  };
     //console.log("Comanda enviada: ");
     //console.log(comanda);
-
-  }
+    
   //console.log(this.categos);
   
 //   this.cargaComanda=function() {
@@ -89,30 +100,14 @@ app.controller('ComandasController', function() {
 //   $('table').find('span').eq(1).html();
 // };
 });
-
-function mesaclk(mes){
+function mesaclk(){
   //console.log("click en mesa ");
   //console.log(mes.id);
   $('#menu_comanda').css({display: 'inherit',
-    width: '100%',
-    height: '0px'
+    width: '100%'    
   });
   $('#menu_comanda').animate({height: "1080px", width: "1920px",opacity: "0.99"}, 500);
 }
-$('#ingresa_comanda').click(function(event) {
- $('#menu_comanda').css({
-   display: 'none',
-   height: '0px',
-   opacity: '0',
- });
-});
-
-
-$('#cancel_comanda').click(function(event) {
-  $('#menu_comanda').animate({
-   width: "0px",
-   opacity: "0.0"}, 1000); 
-});
 
 //JSON datos ejemplo ************-Ignoralooooo*************
 /*

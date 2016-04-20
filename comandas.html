@@ -30,7 +30,7 @@
 	</nav>
 	<div class="container-fluid" >
 		<div id="comandas">
-			<div onclick="mesaclk(this)" class="btn-mesa btn"  ng-class="{'btn-success': mesa.edo==0,'btn-danger': mesa.edo==1 , 'btn-warning': mesa.edo==2}" ng-repeat="mesa in comandasCtrl.mesas" id="mesa{{mesa.id}}">
+			<div onclick="mesaclk()" class="btn-mesa btn"  ng-class="{'btn-success': mesa.edo==0,'btn-danger': mesa.edo==1 , 'btn-warning': mesa.edo==2}" ng-repeat="mesa in comandasCtrl.mesas" id="mesa{{mesa.id}}">
 				<h3>{{mesa.id}}</h3>
 				<img src="imgs/table.png" height="75px">
 				<h3>Sillas: {{mesa.numSillas}}</h3>
@@ -82,10 +82,10 @@
 				</div>
 			</div>
 			<div id="btns_comanda" class="container" >
-				<div id="ingresa_comanda" ng-click="comandasCtrl.mandaComanda()" class="btn btn-primary col-md-4">
+				<div id="ingresa_comanda" ng-click="comandasCtrl.mandaComanda(); comandasCtrl.ingresaComanda()" class="btn btn-primary col-md-4">
 					<span class="glyphicon glyphicon-plus"></span><br>Ingresar comanda
 				</div>
-				<div ng-click="comandasCtrl.resetCantidad()" id="cancel_comanda" class="btn btn-danger col-md-4">
+				<div ng-click="comandasCtrl.resetCantidad(); comandasCtrl.cancelComanda()" id="cancel_comanda" class="btn btn-danger col-md-4">
 					<span class="glyphicon glyphicon-remove"></span><br> Cancelar comanda
 				</div>
 			</div>
