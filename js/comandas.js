@@ -88,7 +88,8 @@ app.controller('ComandasController', function(){
     $('#menu_comanda').animate({
       width: "0px",
       opacity: "0.0"}, 1000);
-      this.mesas[this.n_mesa].edo=2; 
+      this.mesas[this.n_mesa].edo=2;
+      this.resetCantidad(); 
   };
 
   this.cancelComanda=function(){    

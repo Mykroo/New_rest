@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"mesa",
+				"mesaclk"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"ng-",
+				"ng-click	AngularJS"
+			],
+			[
+				"rese",
+				"resetCantidad"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"ngcl",
+				"ng-click	AngularJS"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
 				"mar",
 				"margin-left"
 			],
@@ -24,10 +56,6 @@
 				"btn-success"
 			],
 			[
-				"ng-",
-				"ng-class	AngularJS"
-			],
-			[
 				"car",
 				"cargaProds"
 			],
@@ -46,14 +74,6 @@
 			[
 				"id",
 				"id"
-			],
-			[
-				"mesa",
-				"mesa_ajax"
-			],
-			[
-				"fun",
-				"function"
 			],
 			[
 				"json",
@@ -220,10 +240,6 @@
 				"border-radius"
 			],
 			[
-				"marg",
-				"margin-top"
-			],
-			[
 				"posit",
 				"position"
 			],
@@ -252,51 +268,30 @@
 	"buffers":
 	[
 		{
-			"contents": "<!DOCTYPE html>\n<html lang=\"en\" ng-app=\"restComandas\">\n<head>\n	<meta charset=\"UTF-8\">\n	<title>Comandas</title>\n	<script src=\"js/angular.min.js\"></script>\n	<link rel=\"stylesheet\" href=\"css/bootstrap.css\">	\n	<link rel=\"stylesheet\" href=\"css/comandas.css\">\n</head>\n<body ng-controller=\"ComandasController as comandasCtrl\">\n	<center>\n		<h1>Realiza la orden: {{mesero}}</h1>\n	</center>\n\n	<div class=\"container-fluid\" >\n		<div id=\"comandas\">\n			<div onclick=\"mesaclk(this)\" class=\"btn-mesa btn\"  ng-class=\"{'btn-success': mesa.edo==0,'btn-danger': mesa.edo==1 , 'btn-warning': mesa.edo==2}\" ng-repeat=\"mesa in comandasCtrl.mesas\" id=\"mesa{{mesa.id}}\">\n				<h3>{{mesa.id}}</h3>\n				<img src=\"imgs/table.png\" height=\"75px\">\n				<h3>Sillas: {{mesa.numSillas}}</h3>\n			</div>\n		</div>\n	</div>	\n	<div>\n		<div class=\"container-fluid\" id=\"menu_comanda\">\n			<br>\n			<br>\n			<br>\n			<div class=\"container\" role=\"tabpanel\">\n				<!-- Nav tabs -->\n				<ul class=\"nav nav-tabs nav-justified\" role=\"tablist\">\n					<li role=\"presentation\" ng-repeat=\"cat in comandasCtrl.categos\" ng-class=\"{true: 'active'}[cat.id == 1]\">\n						<a href=\"#{{cat.nombre}}\" aria-controls=\"{{cat.nombre}}\" role=\"tab\" data-toggle=\"tab\">{{cat.nombre | capitalize}}</a>\n					</li>\n\n				</ul>\n\n				<!-- Tab panes -->\n				<div class=\"tab-content\">\n					<div ng-repeat=\"cat in comandasCtrl.categos\" role=\"tabpanel\" class=\"tab-pane \" id=\"{{cat.nombre}}\" ng-class=\"{true: 'active'}[cat.id == 1]\">\n						<table class=\"table table-striped \">\n							<thead>\n								<tr>\n									<th>Producto</th>\n									<th>Precio</th>\n									<th>Descripcion</th>\n									<th>Cantidad</th>\n								</tr>\n							</thead>\n							<tbody>\n								<tr ng-repeat=\"prod in comandasCtrl.prods\" ng-init=\"cantidad=0\" ng-if=\"cat.id==prod.idCategoria\">\n									<td hidden>{{prod.id}}</td>\n									<td>{{prod.nombre}}</td>\n									<td >{{prod.precio | currency}}</td>\n									<td>{{prod.desc}}</td>\n									<td>\n										<div ng-click=\"cantidad=cantidad+1\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-plus\"></span></div>\n										{{cantidad}}\n										<div ng-click=\"cantidad=cantidad-1\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-minus\"></span></div>\n									</td>\n								</tr>						\n							</tbody>\n						</table>\n					</div>\n					<div role=\"tabpanel\" class=\"tab-pane\" id=\"tab\">\n						\n					</div>\n				</div>\n			</div>\n			<div id=\"btns_comanda\" class=\"container\" >\n				<div id=\"ingresa_comanda\" ng- class=\"btn btn-primary col-md-4\">\n					<span class=\"glyphicon glyphicon-plus\"></span><br>Ingresar comanda\n				</div>\n				<div id=\"cancel_comanda\" class=\"btn btn-danger col-md-4\">\n					<span class=\"glyphicon glyphicon-remove\"></span><br> Cancelar comanda\n				</div>\n			</div>\n		</div>\n	</div>\n	\n	<script src=\"js/jquery-2.2.1.min.js\"></script>\n	<script src=\"js/bootstrap.min.js\"></script>\n	<script src=\"js/comandas.js\"></script>\n</body>\n</html>",
 			"file": "comandas.html",
-			"file_size": 2983,
-			"file_write_time": 131054786874716891,
 			"settings":
 			{
-				"buffer_size": 2903,
+				"buffer_size": 3465,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Mykro/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"contents": "html",
+			"file": "cocina.html",
+			"file_size": 11,
+			"file_write_time": 131055874415106875,
 			"settings":
 			{
-				"buffer_size": 197,
-				"line_ending": "Unix"
+				"buffer_size": 4,
+				"line_ending": "Windows",
+				"name": "cocina.html"
 			}
 		},
 		{
-			"contents": "body{\n	background-color: grey;	\n	background: url(../imgs/rst.jpg) no-repeat ;\n	-webkit-background-size:cover;\n	background-size: cover;\n\n}\n\ndiv .btn{\n	margin: 25px; \n	border-radius: 25px;  \n}\n\n\n\ndiv #menu_comanda{	\n	display: none;\n	position: absolute;\n	top: -5px;	\n	background-color: lightgrey;\n	width: 100%;\n	height: 0px;	\n	opacity: 0;\n	overflow: auto;\n}\n#ingresa_comanda{\n	margin-left: 4%;\n}\n\n#cancel_comanda{\n	margin-left: 22%;\n}\n.tab-content{\n	background-color: white;\n}\n\n",
-			"file": "css/comandas.css",
-			"file_size": 522,
-			"file_write_time": 131054790218686564,
-			"settings":
-			{
-				"buffer_size": 475,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "function checaMesas(){\n  var resp;\n  $.ajax({\n    url:'mesas.php',\n    dataType:\"json\",\n    async: false,\n    //cache: false,\n    success: function(data) {\n      resp= data;\n    }\n  });\n  console.log(\"fin cargaMesas\");\n  return resp;\n}\n\nfunction cargaCatego(){\n var resp;\n $.ajax({\n  url:'catego.php',\n  dataType:\"json\",\n  async: false,\n    //cache: false,\n    success: function(data) {\n      resp= data;\n    }    \n  });\n console.log(\"fin cargaCatego\");\n return resp; \n}\nfunction cargaProds(){\n  var resp=null;\n  $.ajax({\n    url:'productos.php',\n    dataType:'json',\n    async: false,\n    cache: false,\n    success: function(data) {\n      resp= data;      \n    },always:function(){\n\n    }\n  });\n  console.log(\"fin cargaProds\");\n  return resp; \n}\n\n\nvar app = angular.module('restComandas', []).\nfilter('capitalize', function() {\n  return function(input, all) {\n    var reg = (all) ? /([^\\W_]+[^\\s-]*) */g : /([^\\W_]+[^\\s-]*)/;\n    return (!!input) ? input.replace(reg, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';\n  }\n});;\napp.controller('ComandasController', function() { \n  //console.log(mesa_ajax);\n  this.prods=cargaProds();\n  this.mesas = checaMesas();\n  this.categos=cargaCatego();\n  this.getClaseMesa=function(ind){\n    return \"btn-success\";\n  }\n});\n\nfunction mesaclk(mes){\n  //console.log(\"click en mesa \");\n  //console.log(mes.id);\n  $('#menu_comanda').css('display', 'inherit');\n  $('#menu_comanda').animate({height: \"1080px\", width: \"1920px\",opacity: \"0.99\"}, 500);\n}\n$('#cancel_comanda').click(function(event) {\n $('#menu_comanda').css({\n   display: 'none',\n   height: '0px',\n   opacity: '0'\n });\n});\n\n$('#cancel_comanda').click(function(event) {\n $('#menu_comanda').css({\n   display: 'none',\n   height: '0px',\n   opacity: '0'\n });;\n\n//JSON datos ejemplo ************-Ignoralooooo*************\n/*\nvar mesa = [{\n  numMesa: 1,\n  description: \"Mesa en la esquina\",\n  numSillas: 8,\n  pedidos: [182,52,33,55],  \n  estado: \"btn-danger\"    \n}, {\n  numMesa: 2,\n  description: \"Mesa en la esquina\",\n  numSillas: 8,\n  pedidos: [182,52,33,55],  \n  estado: \"btn-success\"    \n},{\n  numMesa: 3,\n  description: \"Mesa en la esquina\",\n  numSillas: 8,\n  pedidos: [182,52,33,55],  \n  estado: \"btn-danger\"    \n},{\n  numMesa: 1,\n  description: \"Mesa en la esquina\",\n  numSillas: 8,\n  pedidos: [182,52,33,55],  \n  estado: \"btn-danger\"    \n}, {\n  numMesa: 2,\n  description: \"Mesa en la esquina\",\n  numSillas: 8,\n  pedidos: [182,52,33,55],  \n  estado: \"btn-success\"    \n}];\n*/\n",
 			"file": "js/comandas.js",
-			"file_size": 2489,
-			"file_write_time": 131054746167541160,
 			"settings":
 			{
-				"buffer_size": 2508,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "mesas.php",
-			"settings":
-			{
-				"buffer_size": 451,
+				"buffer_size": 3746,
 				"line_ending": "Windows"
 			}
 		}
@@ -324,10 +319,42 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "ins",
+		"height": 317.0,
+		"last_filter": "navbo",
 		"selected_items":
 		[
+			[
+				"navbo",
+				"Snippet: bs3-navbar-fixed-bottom"
+			],
+			[
+				"co",
+				"Toggle Comment"
+			],
+			[
+				"nav",
+				"Snippet: bs3-navbar-fixed-top"
+			],
+			[
+				"comm",
+				"Toggle Comment"
+			],
+			[
+				"themr",
+				"Themr: List themes"
+			],
+			[
+				"live",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"them",
+				"Themr: List themes"
+			],
+			[
+				"the",
+				"Themr: List themes"
+			],
 			[
 				"ins",
 				"Package Control: Install Package"
@@ -339,10 +366,6 @@
 			[
 				"inst",
 				"Package Control: Install Package"
-			],
-			[
-				"comm",
-				"Toggle Comment"
 			],
 			[
 				"table",
@@ -373,10 +396,6 @@
 				"Snippet: bs3-form"
 			],
 			[
-				"live",
-				"LiveReload: Enable/disable plug-ins"
-			],
-			[
 				"Snippet: ",
 				"Snippet: |json"
 			],
@@ -387,10 +406,6 @@
 			[
 				"instal",
 				"Package Control: Install Package"
-			],
-			[
-				"co",
-				"Toggle Comment"
 			],
 			[
 				"packa",
@@ -415,10 +430,6 @@
 			[
 				"next ",
 				"Emmet: Next Edit Point"
-			],
-			[
-				"nav",
-				"Snippet: bs3-navbar-fixed-top"
 			],
 			[
 				"rein",
@@ -449,7 +460,7 @@
 				"Set Syntax: HTML (Tcl)"
 			]
 		],
-		"width": 472.0
+		"width": 454.0
 	},
 	"console":
 	{
@@ -472,16 +483,25 @@
 	},
 	"expanded_folders":
 	[
-		"/C/wamp/www/NewRest",
-		"/C/wamp/www/NewRest/imgs"
+		"/C/wamp/www/NewRest"
 	],
 	"file_history":
 	[
+		"/C/wamp/www/NewRest/index.html",
+		"/C/wamp/www/NewRest/css/styles.css",
+		"/C/wamp/www/NewRest/css/style.css",
+		"/C/wamp/www/NewRest/css/promociones.css",
+		"/C/wamp/www/NewRest/especiales.html",
 		"/C/wamp/www/NewRest/productos.php",
-		"/C/wamp/bin/apache/apache2.4.9/conf/httpd.conf",
-		"/C/wamp/www/NewRest/promociones.html",
 		"/C/wamp/www/NewRest/catego.php",
+		"/C/wamp/www/NewRest/js/comandas.js",
+		"/C/wamp/www/NewRest/css/comandas.css",
+		"/C/wamp/www/NewRest/promociones.html",
+		"/C/wamp/bin/apache/apache2.4.9/conf/httpd.conf",
+		"/C/wamp/bin/apache/apache2.4.9/README.txt",
 		"/D/UAA/8°/Interfaces/RestSoft/web/index.jsp",
+		"/C/wamp/www/NewRest/comandas.html",
+		"/C/Users/Mykro/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/D/UAA/8°/Interfaces/RestSoft/web/css/comandas.css",
 		"/C/wamp/www/NewRest/mesas.php",
 		"/C/wamp/www/NewRest/BD.sql",
@@ -512,7 +532,6 @@
 		"/D/UAA/8°/Interfaces/RestSoft/web/js/catalogos.js",
 		"/C/Users/Mykro/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Mykro/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
-		"/C/Users/Mykro/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/D/UAA/8°/Interfaces/New Rest/css/style.css",
 		"/D/UAA/8°/Interfaces/New Rest/index.html",
 		"/D/UAA/8°/Interfaces/RestSoft/web/css/catalogos.css",
@@ -521,7 +540,7 @@
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 90.0
 	},
 	"find_in_files":
 	{
@@ -535,6 +554,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"      \n",
+			"conf",
+			"httpd.conf",
+			"httpd",
 			"div",
 			"www/",
 			"www/sub",
@@ -580,25 +603,24 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2903,
+						"buffer_size": 3465,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1563,
-								1568
+								3314,
+								3314
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 196.0,
+						"translation.y": 779.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -606,54 +628,25 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/C/Users/Mykro/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"file": "cocina.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 197,
+						"buffer_size": 4,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								197,
-								197
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "css/comandas.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 475,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								192,
-								192
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"auto_name": "cocina.html",
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -663,64 +656,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "js/comandas.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2508,
+						"buffer_size": 3746,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								420,
-								420
+								2167,
+								2167
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1352.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "mesas.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 451,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								419,
-								419
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -779,32 +741,80 @@
 		"selected_items":
 		[
 			[
-				"cal",
-				"js\\calis.html"
+				"st",
+				"css\\styles.css"
 			],
 			[
 				"",
-				"comandas.html"
+				"css\\style.css"
 			],
 			[
-				"pr",
-				"css\\promociones.css"
-			],
-			[
-				"promocionesh",
-				"promociones.html"
+				"ind",
+				"index.html"
 			],
 			[
 				"sty",
 				"css\\style.css"
 			],
 			[
-				"promo",
+				"pr",
 				"css\\promociones.css"
 			],
 			[
-				"st",
+				"com",
+				"comandas.html"
+			],
+			[
+				"c",
+				"js\\comandas.js"
+			],
+			[
+				"co",
+				"js\\comandas.js"
+			],
+			[
+				"coman",
+				"js\\comandas.js"
+			],
+			[
+				"promo",
+				"promociones.html"
+			],
+			[
+				"prom",
+				"css\\promociones.css"
+			],
+			[
+				"styles",
+				"css\\styles.css"
+			],
+			[
+				"style",
 				"css\\style.css"
+			],
+			[
+				"espe",
+				"especiales.html"
+			],
+			[
+				"coma",
+				"css\\comandas.css"
+			],
+			[
+				"prod",
+				"productos.php"
+			],
+			[
+				"js",
+				"js\\comandas.js"
+			],
+			[
+				"cal",
+				"js\\calis.html"
+			],
+			[
+				"promocionesh",
+				"promociones.html"
 			],
 			[
 				"sc",
@@ -815,20 +825,12 @@
 				"js\\scripts.js"
 			],
 			[
-				"ind",
-				"index.html"
-			],
-			[
 				"s",
 				"css\\style.css"
 			],
 			[
 				"scri",
 				"js\\scripts.js"
-			],
-			[
-				"style",
-				"css\\style.css"
 			]
 		],
 		"width": 0.0
