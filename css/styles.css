@@ -1,7 +1,7 @@
 /*<<<------------   Index css------------>>>>*/
 
 #fondo {
-    background-image: url(../images/rst.jpg);
+    background-image: url(../images/copas.jpg);
     background-repeat: no-repeat;
     position:fixed;
     -webkit-background-size: 100% 100%;
@@ -115,7 +115,7 @@
 	background-color: transparent;
 	width: 850px;
 	height: 500px;
-	margin: 10% 5% 5% 30%;
+	margin: 1% 5% 5% 15%;
 	position: inherit;
 	/*opacity: .50;*/
 	/*border-radius: 3px;
@@ -170,4 +170,71 @@
 #back >h5{
 	color:darkred;
 	font-size: 25pt;
+}
+
+.galeria{
+	position: relative;
+}
+
+.flechaIzq{
+	font-size: 30pt;
+	margin-left: -40px;
+	color: white;
+}
+
+
+.flechaDer{
+	font-size: 30pt;
+	margin-left: 60px;
+	color: white;
+}
+
+
+#btn-ver{
+	width: 100px;
+	height: 50px;
+	opacity: 1;
+	box-shadow: 2px 2px 5px #888;
+	text-align: center;
+	margin: 0% 0px 5px 0px;
+	background-color: #FFF;
+	animation: 1.2s linear 0s alternate none infinite running anima;
+	font-size: 30px;
+	color: darkred;
+
+}
+
+#btn-ok{
+	width: 105px;
+	height: 75px;
+	font-size: 20px;
+	text-align: center;
+	margin: 0px 33px 0px 0px;
+}
+
+#btn-cancel{
+	width: 105px;
+	height: 75px;
+	font-size: 22px;
+	text-align: center;
+	margin: 0px 296px 0px 0px;
+
+}
+
+#flecha-izq{
+	background-color: white;
+	border-radius: 16px;
+	width: 90px;
+	height: 90px;
+	margin: 190px 0px 0px -110px;
+	opacity: 0.7;
+}
+
+#flecha-der{
+	background-color: #FFFFFF;
+	border-radius: 16px;
+	width: 90px;
+	height: 90px;
+	margin: 190px -110px 0px 0px;
+	opacity: 0.7;
 }

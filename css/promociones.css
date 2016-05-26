@@ -1,6 +1,6 @@
 
 #cuerpo{
-  background: url(../images/rst.jpg) center no-repeat;
+  background: url(../images/copas.jpg) center no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   position: fixed;
@@ -15,12 +15,12 @@
   font-size: 50px;
   color: darkred;
 }*/
-#menu{
+/*#menu{
   height: 75%;  
-}
-.fade{
+}*/
+/*.fade{
   height: 100%;  
-}
+}*/
 
 .modal-footer{
   height: 100px;
@@ -38,9 +38,10 @@ div .promo {
 
 
 
-div{
+div .col-md-2{
   height:50%;  
-}
+} 
+
 div #menu_arriba .promo:nth-child(1){
   background-image: url(../images/lunes.jpg);
 }
@@ -136,3 +137,79 @@ div .promo:nth-child(even){
   color:darkred;
   font-size: 25pt;
 }
+
+#promo1{
+  background-color: transparent;
+  width: 150px;
+  height: 145px;
+  float: inherit;
+}
+#promo2{
+    background-color: transparent;
+    width: 150px;
+    height: 145px;
+    float: inherit;
+    margin: -145px 0px 0px 240px;
+}
+#promo3{
+  background-color: transparent;
+  width: 150px;
+  height: 145px;
+  float: inherit;
+  margin: -148px 0px 0px 460px;
+}
+#promo4{
+  background-color: transparent;
+  width: 150px;
+  height: 145px;
+  float: inherit;
+  margin: -143px 0px 0px 673px;
+}
+#promo5{
+  background-color: transparent;
+  width: 150px;
+  height: 145px;
+  float: inherit;
+  margin: 73px 0px 0px 26px;
+}
+#promo6{
+  background-color: transparent;
+  width: 150px;
+  height: 145px;
+  float: inherit;
+  margin: -143px 0px 0px 240px;
+}
+#promo7{
+  background-color: transparent;
+  width: 150px;
+  height: 145px;
+  float: inherit;
+  margin: -143px 0px 0px 459px;
+}
+#promo8{
+  background-color: transparent;
+  width: 150px;
+  height: 145px;
+  float: inherit;
+  margin: -145px 0px 0px 671px;
+
+}
+
+
+#btn-ok{
+  width: 105px;
+  height: 75px;
+  font-size: 20px;
+  text-align: center;
+  margin: 0px 33px 0px 0px;
+}
+
+#btn-cancel{
+  width: 105px;
+  height: 75px;
+  font-size: 22px;
+  text-align: center;
+  margin: 0px 296px 0px 0px;
+
+}
+

@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title> Comandas </title>
+	<title> RestSoft </title>
 
 
 	<!-- Bootstrap core CSS -->
@@ -22,7 +22,8 @@
 </head>
 
 <body>
-	<!-- <div id="fondo"> -->
+
+	</div>
 
 	<div id="cuerpo">	
 				<div class="logo" >
@@ -33,18 +34,18 @@
 			<br>
 			<br>
 			<div class="row" id="menu_arriba">
-				<div class="col-md-2 promo" data-toggle="modal" href='#promo_lunes'></div>
-				<div class="col-md-2 promo" ></div>
-				<div class="col-md-2 promo" ></div>
-				<div class="col-md-2 promo" ></div>
+				<div class="col-md-2 promo" data-toggle="modal" id="promo1" href="#promo_lunes"></div>
+				<div class="col-md-2 promo" data-toggle="modal" id="promo2" href="#promo_martes"></div>
+				<div class="col-md-2 promo" data-toggle="modal" id="promo3" href="#promo_miercoles" ></div>
+				<div class="col-md-2 promo" data-toggle="modal" id="promo4" href="#promo_jueves" ></div>
 			</div>
 			<div class="row" id="menu_abajo">
-				<div class="col-md-2 promo"></div>
-				<div class="col-md-2 promo"></div>
-				<div class="col-md-2 promo"></div>
-				<div class="col-md-2 promo"></div>
+				<div class="col-md-2 promo" data-toggle="modal" id="promo5" href="#promo_viernes"></div>
+				<div class="col-md-2 promo" data-toggle="modal" id="promo6" href="#promo_sabado"></div>
+				<div class="col-md-2 promo" data-toggle="modal" id="promo7" href="#promo_domingo"></div>
+				<div class="col-md-2 promo" data-toggle="modal" id="promo8" href="#promo_cumple"></div>
 			</div>
-			<!-- </div> -->
+			
 	</div>
 
 	<div class="login">
@@ -56,22 +57,157 @@
 		<div class="modal fade" id="promo_lunes">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<div class="modal-header">
+					<!-- <div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title"> Todos los lunes 2x1 cualquier tipo de alitas</h4>
-					</div>
+						<h4 class="modal-title"> </h4>
+					</div> -->
 					<div class="modal-body">
 						<h2>Desea Ordenar la Promoción del día?</h2>
-						<!-- <h5><p>Promoción válida hasta las 9pm</p></h5> -->
+						<h5><p>Promoción válida hasta las 9pm</p></h5>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Solicitar Promoción</button>
+						<button type="button" class="btn btn-default" id="btn-cancel" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="btn-ok" data-dismiss="modal">Reservar</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
+
+		<!-- ///// martes   //// -->
+		<div class="modal fade" id="promo_martes">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title"> </h4>
+					</div> -->
+					<div class="modal-body">
+						<h2>Desea Ordenar la Promoción del día?</h2>
+						<h5><p>Promoción válida hasta las 9pm</p></h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" id="btn-cancel" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="btn-ok" data-dismiss="modal">Reservar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="promo_miercoles">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title"> </h4>
+					</div> -->
+					<div class="modal-body">
+						<h2>Desea Ordenar la Promoción del día?</h2>
+						<h5><p>Promoción válida hasta las 9pm</p></h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" id="btn-cancel" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="btn-ok" data-dismiss="modal">Reservar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="modal fade" id="promo_jueves">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title"> </h4>
+					</div> -->
+					<div class="modal-body">
+						<h2>Desea Ordenar la Promoción del día?</h2>
+						<h5><p>Promoción válida hasta las 9pm</p></h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" id="btn-cancel" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="btn-ok" data-dismiss="modal">Reservar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="promo_viernes">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title"> </h4>
+					</div> -->
+					<div class="modal-body">
+						<h2>Desea Ordenar la Promoción del día?</h2>
+						<h5><p>Promoción válida hasta las 9pm</p></h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" id="btn-cancel" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="btn-ok" data-dismiss="modal">Reservar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="promo_sabado">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title"> </h4>
+					</div> -->
+					<div class="modal-body">
+						<h2>Desea Ordenar la Promoción del día?</h2>
+						<h5><p>Promoción válida hasta las 9pm</p></h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" id="btn-cancel" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="btn-ok" data-dismiss="modal">Reservar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="promo_domingo">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title"> </h4>
+					</div> -->
+					<div class="modal-body">
+						<h2>Desea Ordenar la Promoción del día?</h2>
+						<h5><p>Promoción válida hasta las 9pm</p></h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" id="btn-cancel" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="btn-ok" data-dismiss="modal">Reservar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="promo_cumple">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title"> </h4>
+					</div> -->
+					<div class="modal-body">
+						<h2>Desea Ordenar la Promoción del día?</h2>
+						<h5><p>Promoción válida hasta las 9pm</p></h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" id="btn-cancel" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="btn-ok" data-dismiss="modal">Reservar</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 <!-- Bootstrap core JavaScript
 	================================================== -->
