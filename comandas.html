@@ -9,28 +9,9 @@
 </head>
 <body ng-controller="ComandasController as comandasCtrl">
 	
-	
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container">
-			<p class="navbar-text">Comanda a realizar por mesero: {{"Mykro"}}</p>
-
-			<ul class="nav navbar-nav">
-				<!-- <li class="active">
-					<a href="#">Home</a>
-				</li>
-				<li>
-					<a href="#">Link</a>
-				</li> -->					
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				
-				<li><a href="index.html">Cerrar Sesión</a></li>
-			</ul>
-		</div>
-	</nav>
 	<div class="container-fluid" >
 		<div id="comandas">
-			<div ng-click="comandasCtrl.mesaClk(mesa.id)" class="btn-mesa btn"  ng-class="{'btn-success': mesa.edo==0,'btn-danger': mesa.edo==1 , 'btn-warning': mesa.edo==2}" ng-repeat="mesa in comandasCtrl.mesas" id="mesa{{mesa.id}}">
+			<div ng-click="comandasCtrl.mesaClk(mesa.id)" class="btn-mesa btn"  ng-class="{'btn-success': mesa.edo==0,'btn-warning': mesa.edo==1 , 'btn-danger': mesa.edo==2}" ng-repeat="mesa in comandasCtrl.mesas" id="mesa{{mesa.id}}">
 				<h3>{{mesa.id}}</h3>
 				<img src="imgs/table.png" height="75px">
 				<h3>Sillas: {{mesa.numSillas}}</h3>
@@ -41,8 +22,8 @@
 		<div class="container-fluid" id="menu_comanda">
 			<br>
 			<br>
-			<br>
-			<div class="container" role="tabpanel">
+
+			<div id="tabs-comanda" class="container" role="tabpanel">
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs nav-justified" role="tablist">
 					<li role="presentation" ng-repeat="cat in comandasCtrl.categos" ng-class="{true: 'active'}[cat.id == 1]">
@@ -51,8 +32,12 @@
 				</ul>
 				<!-- Tab panes -->
 				<div class="tab-content">
-					<div ng-repeat="cat in comandasCtrl.categos" role="tabpanel" class="tab-pane " id="{{cat.nombre}}" ng-class="{true: 'active'}[cat.id == 1]">
-						<table class="table table-striped ">
+					<div ng-repeat="cat in comandasCtrl.categos" role="tabpanel" class="tab-pane " id="{{cat.nombre}}" ng-class="{true: 'active'}[cat.id == 1]">					
+						<div class="btn-prod" ng-repeat="prod in comandasCtrl.prods" ng-if="cat.id==prod.idCategoria">
+							<img ng-click="prod.cantidad=prod.cantidad+1 " src="imgs/{{prod.id}}.jpg"/><br>
+							<center><h4>{{prod.nombre}}</h4></center>
+						</div>						
+						<!-- <table class="table table-striped ">
 							<thead>
 								<tr>
 									<th>Producto</th>
@@ -74,10 +59,10 @@
 									</td>
 								</tr>												
 							</tbody>
-						</table>
+						</table> -->
+
 					</div>
 					<div role="tabpanel" class="tab-pane" id="tab">
-						
 					</div>
 				</div>
 			</div>
@@ -85,12 +70,20 @@
 				<div id="ingresa_comanda" ng-click="comandasCtrl.mandaComanda(); comandasCtrl.ingresaComanda()" class="btn btn-primary col-md-4">
 					<span class="glyphicon glyphicon-plus"></span><br>Ingresar comanda
 				</div>
+				<div id="cobra_mesa" class="btn btn-success col-md-4" ng-click="comandasCtrl.cobraMesa();" ng-if="comandasCtrl.mesas[comandasCtrl.n_mesa].edo==2">
+					<span class="glyphicon glyphicon-usd"></span><br>Cobrar mesa {{comandasCtrl.mesas[comandasCtrl.n_mesa].edo}}
+				</div>
 				<div ng-click="comandasCtrl.resetCantidad(); comandasCtrl.cancelComanda()" id="cancel_comanda" class="btn btn-danger col-md-4">
-					<span class="glyphicon glyphicon-remove"></span><br> Cancelar comanda
+					<span class="glyphicon glyphicon-remove"></span><br> Cancelar comanda 
 				</div>
 			</div>
 		</div>
 	</div>		
+	<div class="Salir">
+	<center><button type="button" class="btn btn-default" id="regresar" onclick="window.location.href='index.html'">
+			<h5 class="animated infinite bounce"><b>regresar</b></h5>
+		</button></center>
+	</div>
 	<script src="js/jquery-2.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/comandas.js"></script>

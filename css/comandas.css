@@ -5,7 +5,19 @@ body{
 	background-size: cover;
 
 }
-
+div .btn-prod{
+	margin-right: 3%;
+	margin-left: 3%;
+	margin-bottom: 2.5%;
+	float: left;
+}
+div .btn-prod>img{
+	height: 150px;
+	border-radius:50%;
+}
+div .btn-prod>img:active{
+	opacity: .7;	
+}
 div .btn{
 	margin: 25px; 
 	border-radius: 25px;  
@@ -15,7 +27,11 @@ div #comandas{
 	position: absolute;
 	top: 45px;	
 }
-
+.nav-tabs>li>a{
+	height:70px;
+	padding-top: 25px;
+	font-size: 25px;
+}
 div #menu_comanda{	
 	display: none;
 	position: absolute;
@@ -36,4 +52,37 @@ div #menu_comanda{
 .tab-content{
 	background-color: white;
 }
+#tabs-comanda{
+	margin-left: 15%  ;
+}
 
+
+#regresar{
+  width: 250px;
+  height: 100px;
+  opacity: .60;
+  box-shadow: 2px 2px 5px #888888;
+  /*background-color: orange;*/
+  text-align: center;
+  margin-top: 40%;
+  
+  background-color: white;
+  animation: anima 1.2s linear infinite alternate;
+  -webkit-animation: anima 1.2s linear infinite alternate;
+
+}
+
+
+@-webkit-keyframes anima{
+  from{ -webkit-transform:skew(-3deg,-3deg);}
+  to{ -webkit-transform:skew(3deg,3deg);}
+}
+@keyframes anima{
+  from{transform:skew(-3deg,-3deg);}
+  to{ transform:skew(3deg,3deg);}
+}
+
+#regresar >h5{
+  color:darkred;
+  font-size: 25pt;
+}
