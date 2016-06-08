@@ -19,9 +19,33 @@
 		</div>
 	</div>	
 	<div>
-		<div class="container-fluid" id="menu_comanda">
+		<div class="container" id="menu_comanda">
 			<br>
 			<br>
+			<div id="tabla_comanda">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Producto</th>
+							<th>Cantidad</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="prod in comandasCtrl.prods" ng-if="prod.cantidad > 0">
+							<td>{{prod.nombre}}</td>
+							<td>{{prod.cantidad}}</td>
+							<td>{{prod.precio | currency}}</td>
+							
+						</tr>										
+						<tr>
+							<td><h2>Total: </h2></td>
+							<td></td>
+							<td><h3>{{comandasCtrl.total_comanda | currency}}</h3></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
 			<div id="tabs-comanda" class="container" role="tabpanel">
 				<!-- Nav tabs -->
@@ -32,11 +56,12 @@
 				</ul>
 				<!-- Tab panes -->
 				<div class="tab-content">
-					<div ng-repeat="cat in comandasCtrl.categos" role="tabpanel" class="tab-pane " id="{{cat.nombre}}" ng-class="{true: 'active'}[cat.id == 1]">					
+					<div ng-repeat="cat in comandasCtrl.categos" role="tabpanel" class="tab-pane " id="{{cat.nombre}}" ng-class="{true: 'active'}[cat.id == 1]">								<br>
 						<div class="btn-prod" ng-repeat="prod in comandasCtrl.prods" ng-if="cat.id==prod.idCategoria">
-							<img ng-click="prod.cantidad=prod.cantidad+1 " src="imgs/{{prod.id}}.jpg"/><br>
-							<center><h4>{{prod.nombre}}</h4></center>
+							<img ng-click="prod.cantidad=prod.cantidad+1; comandasCtrl.Total();" src="imgs/{{prod.id}}.jpg"/><br>
+							<h4>{{prod.nombre}}</h4>
 						</div>						
+						<br>
 						<!-- <table class="table table-striped ">
 							<thead>
 								<tr>
@@ -62,28 +87,28 @@
 						</table> -->
 
 					</div>
-					<div role="tabpanel" class="tab-pane" id="tab">
-					</div>
+					<div role="tabpanel" class="tab-pane" id="tab">	</div>
 				</div>
 			</div>
 			<div id="btns_comanda" class="container" >
-				<div id="ingresa_comanda" ng-click="comandasCtrl.mandaComanda(); comandasCtrl.ingresaComanda()" class="btn btn-primary col-md-4">
+				<div id="ingresa_comanda" ng-click="comandasCtrl.mandaComanda(); comandasCtrl.ingresaComanda(); comandasCtrl.total_comanda=0;" class="btn btn-primary col-md-4">
 					<span class="glyphicon glyphicon-plus"></span><br>Ingresar comanda
 				</div>
-				<div id="cobra_mesa" class="btn btn-success col-md-4" ng-click="comandasCtrl.cobraMesa();" ng-if="comandasCtrl.mesas[comandasCtrl.n_mesa].edo==2">
-					<span class="glyphicon glyphicon-usd"></span><br>Cobrar mesa {{comandasCtrl.mesas[comandasCtrl.n_mesa].edo}}
-				</div>
-				<div ng-click="comandasCtrl.resetCantidad(); comandasCtrl.cancelComanda()" id="cancel_comanda" class="btn btn-danger col-md-4">
+				<div ng-click="comandasCtrl.resetCantidad(); comandasCtrl.cancelComanda(); comandasCtrl.total_comanda=0;" id="cancel_comanda" class="btn btn-danger col-md-4">
 					<span class="glyphicon glyphicon-remove"></span><br> Cancelar comanda 
+				</div>
+				<div id="cobra_mesa" class="btn btn-success col-md-4" ng-click="comandasCtrl.cobraMesa();" ng-if="comandasCtrl.mesas[comandasCtrl.n_mesa].edo==2" data-toggle="modal" href='#modal-id'>
+					<span class="glyphicon glyphicon-usd"></span><br>Cobrar mesa {{comandasCtrl.mesas[comandasCtrl.n_mesa].edo}}
 				</div>
 			</div>
 		</div>
 	</div>		
 	<div class="Salir">
-	<center><button type="button" class="btn btn-default" id="regresar" onclick="window.location.href='index.html'">
+		<center><button type="button" class="btn btn-default" id="regresar" onclick="window.location.href='index.html'">
 			<h5 class="animated infinite bounce"><b>regresar</b></h5>
 		</button></center>
 	</div>
+
 	<script src="js/jquery-2.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/comandas.js"></script>

@@ -140,58 +140,59 @@ div .promo:nth-child(even){
 
 #promo1{
   background-color: transparent;
-  width: 150px;
-  height: 145px;
+  width: 230px;
+  height: 225px;
   float: inherit;
+
 }
 #promo2{
     background-color: transparent;
-    width: 150px;
-    height: 145px;
+    width: 230px;
+    height: 225px;
     float: inherit;
-    margin: -145px 0px 0px 240px;
+    margin: -228px 0px 0px 360px;
 }
 #promo3{
   background-color: transparent;
-  width: 150px;
-  height: 145px;
+  width: 230px;
+  height: 225px;
   float: inherit;
-  margin: -148px 0px 0px 460px;
+  margin: -228px 0px 0px 684px;
 }
 #promo4{
   background-color: transparent;
-  width: 150px;
-  height: 145px;
+  width: 230px;
+  height: 225px;
   float: inherit;
-  margin: -143px 0px 0px 673px;
+  margin: -224px 0px 0px 988px;
 }
 #promo5{
   background-color: transparent;
-  width: 150px;
-  height: 145px;
+  width: 230px;
+  height: 225px;
   float: inherit;
-  margin: 73px 0px 0px 26px;
+  margin: 73px 0px 0px 40px;
 }
 #promo6{
   background-color: transparent;
-  width: 150px;
-  height: 145px;
+  width: 230px;
+  height: 225px;
   float: inherit;
-  margin: -143px 0px 0px 240px;
+  margin: -225px 0px 0px 348px;
 }
 #promo7{
   background-color: transparent;
-  width: 150px;
-  height: 145px;
+  width: 230px;
+  height: 225px;
   float: inherit;
-  margin: -143px 0px 0px 459px;
+  margin: -225px 0px 0px 664px;
 }
 #promo8{
   background-color: transparent;
-  width: 150px;
-  height: 145px;
+  width: 230px;
+  height: 225px;
   float: inherit;
-  margin: -145px 0px 0px 671px;
+  margin: -233px 0px 0px 988px;
 
 }
 

@@ -65,8 +65,22 @@ app.controller('ComandasController', function(){
       this.prods[i].cantidad=0;
     }
     console.log("Reseteando cantidad"+this.prods[0].cantidad);
+    $('#regresar').show(); 
+    this.total_comanda=0;
   };
   this.resetCantidad();
+  this.Total=function(){
+    this.total_comanda=0;
+    for (var i = 0; i < this.prods.length; i++) {
+      //this.prods[i];     
+      if (this.prods[i].cantidad>0) {
+        //console.log(this.prods[i].cantidad*10 + "  " + this.prods[i].precio* 3);
+
+        this.total_comanda+=parseInt(this.prods[i].cantidad) * parseInt(this.prods[i].precio) ;
+      }
+    }
+        //console.log("*************************************");
+  };
   this.comanda=[{
     id:0,
     prods:[],
@@ -77,31 +91,37 @@ app.controller('ComandasController', function(){
     this.comanda.push({
       id:this.mesas[i].id,
       prods:[],
+      prec:[],
       cant:[]
     });     
   }
-
+  this.total_comanda=0;
+  console.log(this.comanda);
   this.mandaComanda=function(){
-    console.log("oliii");
+    
     var aux_pos,aux_idprod, aux_cant;
     for (var i = 0; i < this.prods.length; i++) {
       aux_cant=this.prods[i].cantidad;
       if(aux_cant>0){
-        console.log(this.n_mesa+1);
+        //console.log(this.n_mesa+1);
         aux_idprod=this.comanda[this.n_mesa+1].prods.indexOf(this.prods[i].idCategoria);
-        if(aux_idprod>-1){
+        if(aux_idprod==-1){
+          console.log(aux_idprod+" agregando  id "+aux_cant);
           this.comanda[this.n_mesa+1].prods.push(this.prods[i].idCategoria);        
           this.comanda[this.n_mesa+1].cant.push(aux_cant);        
+          this.comanda[this.n_mesa+1].prec.push(this.prods[i].precio);        
         }else{
+          console.log("id ya existe sumando cant");
           this.comanda[this.n_mesa+1].cant[aux_idprod]+=aux_cant;
         }
       }
     }
-    console.log(this.comanda[this.n_mesa]);
+    console.log(this.comanda[this.n_mesa+1]);
     //console.log(this.comanda);
   };
   this.mesaClk=mesaclk;   
   this.mesaClk=function(n_mesa){
+    $('#regresar').hide();
     $('#menu_comanda').css({display: 'inherit',
       width: '100%' 
     });
@@ -111,20 +131,28 @@ app.controller('ComandasController', function(){
     console.log(this.mesas[n_mesa-1].edo);
     //console.log(this.mesas);
   } 
-  this.ingresaComanda=function(){    
+  this.ingresaComanda=function(){  
     $('#menu_comanda').animate({
       width: "0px",
       opacity: "0.0"}, 1000);
     this.mesas[this.n_mesa].edo=2;
       //console.log(this.prods);
-      this.resetCantidad(); 
+      this.resetCantidad();
+
     };
     this.cobraMesa=function(){
+      var total=0; 
+      console.log(this.comanda);
+      for (var i = 0; i < this.comanda[this.n_mesa+1].prods.length; i++) {
+        //total+=(this.comanda[this.n_mesa+1].prods[i]*this.comanda[this.n_mesa+1].prods[i].precio);
+      }
       $('#menu_comanda').animate({
         width: "0px",
         opacity: "0.0"}, 1000);
-      this.mesas[this.n_mesa].edo=0;    
+      this.mesas[this.n_mesa].edo=0;   
+      console.log(total);
       this.resetCantidad(); 
+      alert("Cobrando mesa "+this.n_mesa );
     }
     this.cancelComanda=function(){    
       $('#menu_comanda').animate({
