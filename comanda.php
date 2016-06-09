@@ -8,6 +8,36 @@ $mesa = $_POST["mesa"]+1;
 $edo = $_POST["edo"];
 $n_cuenta=666;
 
+if ($edo>0) {
+	$query="SELECT MAX(id) FROM cuenta WHERE idMesa=".$mesa;
+	$result = $conn->query($query);
+	if ($result->num_rows > 0) {
+    // output data of each row
+		while($row = $result->fetch_assoc()) {
+			//echo "id: " . $row["MAX(id)"];
+			$n_cuenta = $row["MAX(id)"];
+		}
+	} else {
+		echo "0 results";
+	}	
+}else{
+	$query="INSERT INTO cuenta(idmesa) VALUES (".$mesa.")";
+	if($conn->query($query)=== TRUE){
+		echo "Cuenta new";
+	}else{
+		echo "Cuenta nueva no creada :(";
+	}
+	$query="SELECT MAX(id) FROM cuenta WHERE idMesa=".$mesa;
+	$result = $conn->query($query);
+	if ($result->num_rows > 0) {
+    // output data of each row
+		while($row = $result->fetch_assoc()) {
+			$n_cuenta=$row["MAX(id)"];
+		}
+	} else {
+		echo "0 results";
+	}
+}
 
 
 //echo json_encode($_POST["prods"]);
@@ -18,7 +48,7 @@ foreach ($datos as $r) {
 	//echo $query;
 	if ($r['cantidad']>0){
 		if($conn->query($query)=== TRUE){
-			echo "a toda maye *";
+			echo " A_A toda maye *";
 		}else{
 			die('Error : ' . mysql_error());
 		}
