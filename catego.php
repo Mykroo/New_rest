@@ -1,7 +1,6 @@
 <?php 
 //header('Content-type:application/json; charset=UTF-8');
-
-$conn = new mysqli("localhost","root","");
+include 'conn.php';
 
 if ($conn->connect_error) {
 	die("Conexion fallida: " . $conn->connect_error);

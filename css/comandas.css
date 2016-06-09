@@ -6,18 +6,20 @@ body{
 
 }
 .tab-content>div{
-	height: 600px;
+	height: 500px;
 }
 div .btn-prod{
 	margin-right: 3%;
 	margin-left: 3%;
 	margin-bottom: 2.5%;
 	float: left;
+	width: 200px;
 	animation: pop 1.2s linear infinite alternate;
   -webkit-animation: pop 1.2s linear infinite alternate;
 }
 div .btn-prod>img{
 	height: 150px;
+	width: 200px;
 	border-radius:50%;
 
 }

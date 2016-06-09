@@ -60,15 +60,17 @@ app.controller('ComandasController', function(){
   this.prods=cargaProds();
   this.mesas = checaMesas();
   this.categos=cargaCatego();
+  
   this.resetCantidad=function(){
     for (var i = 0; i < this.prods.length; i++) {
       this.prods[i].cantidad=0;
     }
-    console.log("Reseteando cantidad"+this.prods[0].cantidad);
+    //console.log("Reseteando cantidad"+this.prods[0].cantidad);
     $('#regresar').show(); 
     this.total_comanda=0;
   };
   this.resetCantidad();
+
   this.Total=function(){
     this.total_comanda=0;
     for (var i = 0; i < this.prods.length; i++) {
@@ -87,38 +89,17 @@ app.controller('ComandasController', function(){
     cant:[]
   }];
 
-  for (var i = 0; i < this.mesas.length; i++) {      
-    this.comanda.push({
-      id:this.mesas[i].id,
-      prods:[],
-      prec:[],
-      cant:[]
-    });     
-  }
+  
   this.total_comanda=0;
   console.log(this.comanda);
   this.mandaComanda=function(){
+        //console.log(this.prods);
     
-    var aux_pos,aux_idprod, aux_cant;
-    for (var i = 0; i < this.prods.length; i++) {
-      aux_cant=this.prods[i].cantidad;
-      if(aux_cant>0){
-        //console.log(this.n_mesa+1);
-        aux_idprod=this.comanda[this.n_mesa+1].prods.indexOf(this.prods[i].idCategoria);
-        if(aux_idprod==-1){
-          console.log(aux_idprod+" agregando  id "+aux_cant);
-          this.comanda[this.n_mesa+1].prods.push(this.prods[i].idCategoria);        
-          this.comanda[this.n_mesa+1].cant.push(aux_cant);        
-          this.comanda[this.n_mesa+1].prec.push(this.prods[i].precio);        
-        }else{
-          console.log("id ya existe sumando cant");
-          this.comanda[this.n_mesa+1].cant[aux_idprod]+=aux_cant;
-        }
-      }
-    }
-    console.log(this.comanda[this.n_mesa+1]);
-    //console.log(this.comanda);
+      $.post("comanda.php", {prods: this.prods, mesa:this.n_mesa,edo: this.mesas[this.n_mesa].edo}, function(data){
+        console.log(data);        
+      });
   };
+
   this.mesaClk=mesaclk;   
   this.mesaClk=function(n_mesa){
     $('#regresar').hide();

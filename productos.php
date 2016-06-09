@@ -1,7 +1,7 @@
 <?php 
 header('Content-type:application/json');
 
-$conn = new mysqli("localhost","root","");
+include 'conn.php';
 
 if ($conn->connect_error) {
 	die("Conexion fallida: " . $conn->connect_error);
